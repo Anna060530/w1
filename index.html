@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>裝潢秀 數位造型最佳幫手 — 謝仁韋</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;600;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:#0C0904; --dark:#1A1108; --mid:#2C1B0C; --gold:#C9954A; --gold-lt:#E8C68A;
+  --cream:#F2E8D8; --muted:#9A8268; --accent:#C45A1E; --accent2:#E07340;
+}
+html { scroll-behavior: smooth; }
+body { font-family:'Noto Sans TC',Arial,sans-serif; background:var(--bg); color:var(--cream); overflow-x:hidden; }
+::-webkit-scrollbar { width:4px; }
+::-webkit-scrollbar-thumb { background:var(--gold); border-radius:2px; }
+
+nav { position:fixed; top:0; left:0; right:0; z-index:200; display:flex; align-items:center; justify-content:space-between; padding:0 56px; height:68px; background:rgba(12,9,4,0.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(201,149,74,0.15); }
+.logo-wrap { display:flex; align-items:center; gap:12px; text-decoration:none; }
+.logo-text { font-family:'Noto Serif TC',serif; font-weight:900; font-size:1.05rem; color:var(--gold); letter-spacing:0.1em; white-space:nowrap; }
+.nav-links { display:flex; gap:36px; list-style:none; margin:0 auto; }
+.nav-links a { font-size:0.78rem; letter-spacing:0.18em; color:rgba(242,232,216,0.6); text-decoration:none; white-space:nowrap; transition:color 0.2s; }
+.nav-links a:hover { color:var(--gold); }
+.nav-cta { padding:10px 28px; background:var(--accent); color:#fff; font-size:0.78rem; letter-spacing:0.16em; text-decoration:none; white-space:nowrap; border-radius:2px; transition:background 0.2s; flex-shrink:0; }
+.nav-cta:hover { background:var(--accent2); }
+
+.hero { min-height:100vh; display:flex; align-items:flex-end; position:relative; overflow:hidden; }
+.hero-bg { position:absolute; inset:0; background:url('https://i.ibb.co/zVWkCsP6/S-28549161-0.jpg') center/cover no-repeat, repeating-linear-gradient(12deg,transparent,transparent 3px,rgba(180,120,50,0.06) 3px,rgba(180,120,50,0.06) 6px), linear-gradient(160deg,#1a0e04 0%,#2e1806 40%,#0e0804 100%); }
+.hero-bg::after { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(12,9,4,0.92) 0%,rgba(20,12,5,0.7) 55%,rgba(12,9,4,0.6) 100%); }
+.hero-content { position:relative; z-index:2; padding:0 80px 96px; max-width:700px; }
+.hero-badge { display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(201,149,74,0.45); padding:8px 20px; margin-bottom:36px; font-size:0.72rem; letter-spacing:0.3em; color:var(--gold); }
+.badge-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); flex-shrink:0; animation:blink 2s ease infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.35} }
+.hero-h1 { font-family:'Noto Serif TC',serif; font-weight:900; font-size:clamp(3rem,6vw,5.4rem); line-height:1.1; color:var(--cream); margin-bottom:28px; }
+.hero-h1 em { color:var(--gold); font-style:normal; }
+.hero-desc { font-size:0.94rem; line-height:2; color:rgba(242,232,216,0.62); max-width:460px; margin-bottom:52px; }
+.hero-actions { display:flex; gap:20px; align-items:center; flex-wrap:wrap; }
+.btn-prim { display:inline-block; padding:16px 44px; background:var(--accent); color:#fff; font-size:0.84rem; letter-spacing:0.2em; text-decoration:none; border-radius:2px; transition:background 0.2s,transform 0.2s; }
+.btn-prim:hover { background:var(--accent2); transform:translateY(-2px); }
+.btn-ghost { display:inline-flex; align-items:center; gap:10px; color:var(--gold); font-size:0.82rem; letter-spacing:0.14em; text-decoration:none; transition:gap 0.2s; }
+.btn-ghost:hover { gap:16px; }
+.hero-stats { position:absolute; right:80px; bottom:96px; z-index:2; display:flex; gap:52px; }
+.stat-num { font-family:'Noto Serif TC',serif; font-size:2.8rem; font-weight:900; color:var(--gold); line-height:1; }
+.stat-suf { font-size:1.4rem; color:var(--accent); }
+.stat-label { font-size:0.75rem; letter-spacing:0.2em; color:rgba(242,232,216,0.45); margin-top:6px; }
+
+.marquee-wrap { background:var(--accent); overflow:hidden; padding:14px 0; }
+.marquee-track { display:flex; animation:marquee 26s linear infinite; white-space:nowrap; }
+.marquee-item { display:inline-flex; align-items:center; gap:24px; padding:0 36px; font-size:0.73rem; letter-spacing:0.26em; color:rgba(255,255,255,0.9); }
+.marquee-item::after { content:'×'; opacity:0.5; }
+@keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+.eyebrow { display:inline-flex; align-items:center; gap:14px; font-size:0.7rem; letter-spacing:0.36em; color:var(--accent); text-transform:uppercase; margin-bottom:18px; }
+.eyebrow::before { content:''; width:28px; height:1px; background:var(--accent); flex-shrink:0; }
+.sec-title { font-family:'Noto Serif TC',serif; font-size:clamp(1.9rem,3.5vw,2.9rem); font-weight:900; color:var(--cream); line-height:1.25; }
+.sec-title span { color:var(--gold); }
+
+.services { padding:120px 80px; background:var(--bg); }
+.svc-intro { margin-bottom:72px; max-width:580px; }
+.svc-sub { font-size:0.9rem; line-height:1.95; color:var(--muted); margin-top:22px; }
+.svc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:4px; }
+.svc-card { background:var(--dark); position:relative; overflow:hidden; cursor:default; transition:transform 0.35s; }
+.svc-card:hover { transform:translateY(-6px); z-index:2; }
+.svc-img-wrap { position:relative; height:270px; overflow:hidden; background:var(--mid); }
+.svc-img-wrap img { width:100%; height:100%; object-fit:cover; display:block; filter:brightness(0.72) saturate(0.75); transition:filter 0.4s,transform 0.5s; }
+.svc-card:hover .svc-img-wrap img { filter:brightness(0.9) saturate(1); transform:scale(1.06); }
+.svc-body { padding:36px 32px 44px; }
+.svc-num { font-size:0.65rem; letter-spacing:0.32em; color:var(--accent); margin-bottom:14px; }
+.svc-name { font-family:'Noto Serif TC',serif; font-size:1.25rem; font-weight:600; color:var(--gold-lt); margin-bottom:14px; }
+.svc-desc { font-size:0.82rem; line-height:1.95; color:rgba(242,232,216,0.52); }
+.svc-bar { position:absolute; bottom:0; left:0; right:0; height:3px; background:var(--accent); transform:scaleX(0); transform-origin:left; transition:transform 0.35s; }
+.svc-card:hover .svc-bar { transform:scaleX(1); }
+
+.feature { display:grid; grid-template-columns:1fr 1fr; min-height:560px; }
+.feat-img { position:relative; overflow:hidden; background:var(--mid); }
+.feat-img img { width:100%; height:100%; object-fit:cover; filter:brightness(0.8) saturate(0.8); display:block; transition:transform 8s ease; }
+.feat-img:hover img { transform:scale(1.06); }
+.feat-img::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg,transparent 50%,rgba(12,9,4,0.9) 100%); }
+.feat-text { background:var(--dark); padding:80px 72px; display:flex; flex-direction:column; justify-content:center; }
+.feat-stats { display:flex; gap:56px; margin:36px 0; }
+.fstat-num { font-family:'Noto Serif TC',serif; font-size:3.4rem; font-weight:900; color:var(--gold); line-height:1; }
+.fstat-suf { font-size:1.5rem; color:var(--accent); }
+.fstat-label { font-size:0.7rem; letter-spacing:0.2em; color:var(--muted); margin-top:8px; }
+.feat-desc { font-size:0.9rem; line-height:2; color:rgba(242,232,216,0.55); max-width:420px; }
+.feat-link { margin-top:44px; }
+
+.gallery { padding:120px 80px; background:var(--bg); }
+.gallery-hd { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:52px; }
+.gallery-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+.gi { overflow:hidden; position:relative; background:var(--mid); height:260px; }
+.gi img { width:100%; height:100%; object-fit:cover; display:block; filter:brightness(0.78) saturate(0.72); transition:transform 0.6s ease,filter 0.4s; }
+.gi:hover img { transform:scale(1.08); filter:brightness(0.96) saturate(1.05); }
+.gi-ov { position:absolute; inset:0; background:linear-gradient(to top,rgba(12,9,4,0.7) 0%,transparent 55%); opacity:0; transition:opacity 0.3s; }
+.gi:hover .gi-ov { opacity:1; }
+
+.flow { padding:120px 80px; background:var(--mid); position:relative; overflow:hidden; }
+.flow::before { content:''; position:absolute; inset:0; background:repeating-linear-gradient(0deg,transparent,transparent 47px,rgba(201,149,74,0.05) 47px,rgba(201,149,74,0.05) 48px),repeating-linear-gradient(90deg,transparent,transparent 47px,rgba(201,149,74,0.05) 47px,rgba(201,149,74,0.05) 48px); }
+.flow-inner { position:relative; z-index:1; }
+.flow-hd { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:80px; flex-wrap:wrap; gap:28px; }
+.flow-steps { display:grid; grid-template-columns:repeat(4,1fr); position:relative; gap:0; }
+.flow-line { position:absolute; top:31px; left:88px; right:88px; height:1px; background:rgba(201,149,74,0.22); }
+.flow-step { padding:0 24px 0 0; }
+.step-dot { width:64px; height:64px; border-radius:50%; border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; font-family:'Noto Serif TC',serif; font-size:1.2rem; font-weight:900; color:var(--gold); margin-bottom:28px; position:relative; z-index:1; background:var(--mid); transition:background 0.3s,color 0.3s,border-color 0.3s; }
+.flow-step:hover .step-dot { background:var(--accent); border-color:var(--accent); color:#fff; }
+.step-title { font-family:'Noto Serif TC',serif; font-size:1.05rem; font-weight:600; color:var(--gold-lt); margin-bottom:14px; }
+.step-desc { font-size:0.8rem; line-height:1.95; color:rgba(242,232,216,0.48); }
+
+.cta-strip { padding:110px 80px; background:url('https://i.ibb.co/NgJWyFdr/S-28549162-0.jpg') center/cover fixed, linear-gradient(135deg,var(--mid) 0%,var(--bg) 100%); position:relative; }
+.cta-strip::before { content:''; position:absolute; inset:0; background:rgba(12,9,4,0.86); }
+.cta-inner { position:relative; z-index:1; max-width:680px; margin:0 auto; text-align:center; }
+.cta-title { font-family:'Noto Serif TC',serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:900; color:var(--cream); line-height:1.25; margin-bottom:20px; }
+.cta-title em { color:var(--gold); font-style:normal; }
+.cta-sub { font-size:0.9rem; color:var(--muted); margin-bottom:52px; line-height:2; }
+.cta-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+.btn-lg { padding:17px 52px; font-size:0.84rem; letter-spacing:0.22em; text-decoration:none; border-radius:2px; transition:transform 0.2s; display:inline-block; }
+.btn-lg:hover { transform:translateY(-3px); }
+.btn-acc { background:var(--accent); color:#fff; }
+.btn-out { border:1px solid var(--gold); color:var(--gold); }
+
+.contact { padding:120px 80px; display:grid; grid-template-columns:1fr 1fr; gap:96px; background:var(--bg); }
+.contact-title { font-family:'Noto Serif TC',serif; font-size:2.1rem; font-weight:900; color:var(--cream); margin-bottom:20px; }
+.contact-desc { font-size:0.88rem; line-height:2; color:var(--muted); margin-bottom:44px; }
+.c-row { display:flex; gap:0; border-bottom:1px solid rgba(201,149,74,0.12); padding:18px 0; }
+.c-label { font-size:0.73rem; letter-spacing:0.24em; color:var(--accent); min-width:88px; flex-shrink:0; padding-top:2px; }
+.c-val { font-size:0.88rem; color:rgba(242,232,216,0.68); line-height:1.75; }
+.c-val a { color:var(--gold); text-decoration:none; }
+.c-val a:hover { text-decoration:underline; }
+.form-wrap { display:flex; flex-direction:column; gap:14px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.field { background:rgba(255,255,255,0.045); border:1px solid rgba(201,149,74,0.18); padding:15px 18px; font-size:0.86rem; color:var(--cream); font-family:'Noto Sans TC',Arial,sans-serif; outline:none; border-radius:2px; width:100%; transition:border-color 0.2s; }
+.field::placeholder { color:rgba(242,232,216,0.28); }
+.field:focus { border-color:var(--gold); background:rgba(201,149,74,0.06); }
+textarea.field { min-height:136px; resize:vertical; }
+.form-submit { padding:16px; background:var(--accent); color:#fff; border:none; cursor:pointer; border-radius:2px; font-size:0.84rem; font-family:'Noto Sans TC',Arial,sans-serif; letter-spacing:0.22em; transition:background 0.2s,transform 0.2s; }
+.form-submit:hover { background:var(--accent2); transform:translateY(-2px); }
+.form-submit:disabled { background:var(--muted); opacity:0.6; cursor:not-allowed; transform:none; }
+
+footer { padding:48px 80px; background:#060302; border-top:1px solid rgba(201,149,74,0.08); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; }
+.footer-brand { font-family:'Noto Serif TC',serif; font-weight:900; font-size:1rem; color:var(--gold); }
+.footer-links { display:flex; gap:32px; flex-wrap:wrap; }
+.footer-links a { font-size:0.75rem; letter-spacing:0.16em; color:rgba(242,232,216,0.32); text-decoration:none; transition:color 0.2s; }
+.footer-links a:hover { color:var(--gold); }
+.footer-copy { font-size:0.72rem; color:rgba(242,232,216,0.2); }
+
+.modal-overlay { position:fixed; inset:0; background:rgba(6,4,2,0.75); backdrop-filter:blur(8px); z-index:999; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none; transition:opacity 0.3s ease; }
+.modal-overlay.active { opacity:1; pointer-events:auto; }
+.modal-box { background:var(--dark); border:1px solid var(--gold); padding:40px; max-width:420px; width:90%; text-align:center; border-radius:4px; box-shadow:0 20px 40px rgba(0,0,0,0.6); transform:scale(0.9); transition:transform 0.3s ease; }
+.modal-overlay.active .modal-box { transform:scale(1); }
+.modal-icon { width:48px; height:48px; margin:0 auto 20px; stroke:var(--gold); }
+.modal-title { font-family:'Noto Serif TC',serif; font-size:1.4rem; color:var(--cream); margin-bottom:12px; font-weight:600; }
+.modal-msg { font-size:0.88rem; color:var(--muted); line-height:1.8; margin-bottom:28px; }
+.modal-btn { padding:12px 36px; background:var(--accent); color:#fff; border:none; font-size:0.82rem; letter-spacing:0.15em; border-radius:2px; cursor:pointer; transition:background 0.2s; }
+.modal-btn:hover { background:var(--accent2); }
+
+.reveal { opacity:0; transform:translateY(32px); transition:opacity 0.7s ease,transform 0.7s ease; }
+.reveal.in { opacity:1; transform:none; }
+
+@media (max-width:1024px) {
+  .hero-content { padding:0 48px 80px; }
+  .hero-stats { right:48px; bottom:80px; gap:32px; }
+  .gallery-grid { grid-template-columns:repeat(3,1fr); }
+}
+@media (max-width:768px) {
+  nav { padding:0 24px; }
+  .nav-links, .nav-cta { display:none; }
+  .hero-content { padding:0 24px 80px; }
+  .hero-stats { display:none; }
+  .services, .gallery, .flow, .contact { padding:80px 24px; }
+  .svc-grid { grid-template-columns:1fr; }
+  .feature { grid-template-columns:1fr; }
+  .feat-img { height:280px; }
+  .feat-text { padding:56px 28px; }
+  .gallery-grid { grid-template-columns:repeat(2,1fr); }
+  .gi { height:180px; }
+  .flow-steps { grid-template-columns:1fr 1fr; gap:40px; }
+  .flow-line { display:none; }
+  .flow-hd { flex-direction:column; align-items:flex-start; }
+  .cta-strip { padding:80px 24px; }
+  .contact { grid-template-columns:1fr; gap:52px; padding:80px 24px; }
+  .form-row { grid-template-columns:1fr; }
+  footer { padding:36px 24px; flex-direction:column; text-align:center; gap:16px; }
+}
+@media (max-width:480px) { .gallery-grid { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo-wrap">
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+      <rect width="30" height="30" rx="2" fill="#C9954A" fill-opacity="0.14"/>
+      <path d="M7 23V10.5L15 7l8 3.5V23" stroke="#C9954A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M11 23v-6.5h8V23" stroke="#C9954A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="15" cy="10.5" r="1.5" fill="#C45A1E"/>
+    </svg>
+    <span class="logo-text">新繹 × 裝潢秀</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">服務項目</a></li>
+    <li><a href="#gallery">作品案例</a></li>
+    <li><a href="#flow">合作流程</a></li>
+    <li><a href="#contact">聯絡</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">免費估價</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="badge-dot"></span>新繹數位木作雲端中心</div>
+    <h1 class="hero-h1">裝潢秀<br><em>數位造型</em><br>最佳幫手</h1>
+    <p class="hero-desc">透過雲端 platform 一站式完成拆圖、製圖到骨架切割，20 年 CNC 經驗，協助全台木工團隊實現各式曲面與特殊造型製作。</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-prim">立即諮詢估價</a>
+      <a href="https://drive.google.com/drive/u/2/folders/1AJZHjZQTYRXQD5nKeLKPcEDHFdTSfn3w" class="btn-ghost" target="_blank">瀏覽更多作品 →</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div><div class="stat-num">20<span class="stat-suf">年</span></div><div class="stat-label">數位木作經驗</div></div>
+    <div><div class="stat-num">75<span class="stat-suf">%</span></div><div class="stat-label">節省製作時間</div></div>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">CNC 數位切割</span><span class="marquee-item">代客拆圖製圖</span><span class="marquee-item">曲面骨架設計</span><span class="marquee-item">快速雲端估價</span><span class="marquee-item">全台配送到廠</span><span class="marquee-item">3D 模型建模</span><span class="marquee-item">天花造型板</span><span class="marquee-item">特殊異型加工</span><span class="marquee-item">CNC 數位切割</span><span class="marquee-item">代客拆圖製圖</span><span class="marquee-item">曲面骨架設計</span><span class="marquee-item">快速雲端估價</span><span class="marquee-item">全台配送到廠</span><span class="marquee-item">3D 模型建模</span><span class="marquee-item">天花造型板</span><span class="marquee-item">特殊異型加工</span>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="svc-intro reveal">
+    <div class="eyebrow">核心服務</div>
+    <h2 class="sec-title">從圖面到成品<br><span>三步驟一條龍</span></h2>
+    <p class="svc-sub">廠內設有多組 CNC 加工機，可多條產線同時運作，從大型裝置到精緻小件，新繹都能完成。</p>
+  </div>
+  <div class="svc-grid">
+    <div class="svc-card reveal">
+      <div class="svc-img-wrap"><img src="https://i.ibb.co/Q7kZ4HVk/S-28549157-0.jpg" alt="代客拆圖 · 製圖" loading="lazy"></div>
+      <div class="svc-body">
+        <div class="svc-num">SERVICE 01</div>
+        <div class="svc-name">代客拆圖 · 製圖</div>
+        <p class="svc-desc">專業製圖團隊提供圖面製作、3D 模型製圖及拆圖，將您的創意完整轉化為可加工的精準圖檔。</p>
+      </div>
+      <div class="svc-bar"></div>
+    </div>
+    <div class="svc-card reveal" style="transition-delay:0.1s">
+      <div class="svc-img-wrap"><img src="https://i.ibb.co/d0w0L9yJ/S-28549158-0.jpg" alt="骨架設計 · 切割" loading="lazy"></div>
+      <div class="svc-body">
+        <div class="svc-num">SERVICE 02</div>
+        <div class="svc-name">骨架設計 · 切割</div>
+        <p class="svc-desc">依照圖面規格進行 CNC 骨架切割，刀具不留黑邊，保留原木色澤，有效協助各式曲面造型製作。</p>
+      </div>
+      <div class="svc-bar"></div>
+    </div>
+    <div class="svc-card reveal" style="transition-delay:0.2s">
+      <div class="svc-img-wrap"><img src="https://i.ibb.co/G452j07d/S-28549159-0.jpg" alt="雲端接案 · 快速交貨" loading="lazy"></div>
+      <div class="svc-body">
+        <div class="svc-num">SERVICE 03</div>
+        <div class="svc-name">雲端接案 · 快速交貨</div>
+        <p class="svc-desc">透過雲端中心線上溝通、即時報價，多條產線同時加工，全台配送到廠，省去 75% 製作時間。</p>
+      </div>
+      <div class="svc-bar"></div>
+    </div>
+  </div>
+</section>
+
+<section class="feature">
+  <div class="feat-img"><img src="https://i.ibb.co/nNfYYWRh/S-28549160-0.jpg" alt="CNC精準切割不留黑邊" loading="lazy"></div>
+  <div class="feat-text reveal">
+    <div class="eyebrow">技術優勢</div>
+    <h2 class="sec-title" style="font-size:clamp(1.7rem,2.8vw,2.4rem)">精準切割<br><span>不留黑邊</span></h2>
+    <div class="feat-stats">
+      <div><div class="fstat-num">75<span class="fstat-suf">%</span></div><div class="fstat-label">節省製作時間</div></div>
+      <div><div class="fstat-num">20<span class="fstat-suf">年</span></div><div class="fstat-label">數位木作經驗</div></div>
+    </div>
+    <p class="feat-desc">不論是牆上的地圖造型、複雜曲面天花，新繹 CNC 刀具切割技術不讓切面出現燒過的黑邊，保留原木顏色，每一件作品都細膩到位。</p>
+    <div class="feat-link"><a href="#contact" class="btn-prim">立即洽詢</a></div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="gallery-hd reveal">
+    <div>
+      <div class="eyebrow">作品案例</div>
+      <h2 class="sec-title">實際<span>完工案例</span></h2>
+    </div>
+    <a href="https://drive.google.com/drive/folders/1AJZHjZQTYRXQD5nKeLKPcEDHFdTSfn3w" class="btn-ghost" target="_blank">更多案例請按此 →</a>
+  </div>
+  <div class="gallery-grid" id="galleryGrid"></div>
+</section>
+
+<section class="flow" id="flow">
+  <div class="flow-inner">
+    <div class="flow-hd reveal">
+      <div>
+        <div class="eyebrow">合作流程</div>
+        <h2 class="sec-title">四步驟<br><span>輕鬆完成</span>專案</h2>
+      </div>
+      <a href="https://line.me/ti/p/pdWGwHErCs" target="_blank" class="btn-prim">加 LINE 開始合作</a>
+    </div>
+    <div class="flow-steps reveal">
+      <div class="flow-line"></div>
+      <div class="flow-step"><div class="step-dot">01</div><div class="step-title">雲端諮詢</div><p class="step-desc">傳送您的想法或設計圖面，業務專員即時討論並提供估價，無需親赴工廠。</p></div>
+      <div class="flow-step"><div class="step-dot">02</div><div class="step-title">圖面製作</div><p class="step-desc">專業製圖團隊提供拆圖、3D 模型建模、CNC 排版等完整圖面服務。</p></div>
+      <div class="flow-step"><div class="step-dot">03</div><div class="step-title">CNC 加工</div><p class="step-desc">圖檔確認後立即上機，多組 CNC 機台同時運作，精準切割不留黑邊。</p></div>
+      <div class="flow-step"><div class="step-dot">04</div><div class="step-title">快速交貨</div><p class="step-desc">切割完成後配送全台，師傅直接組裝，大幅節省整體工期。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="cta-inner reveal">
+    <h2 class="cta-title">還在用人工打板嗎？<br>快來試試<em>數位木作</em></h2>
+    <p class="cta-sub">謝仁韋 × 新繹數位木作雲端中心<br>快速交貨 ｜ 品質保證 ｜ 價格實惠</p>
+    <div class="cta-btns">
+      <a href="#contact" class="btn-lg btn-acc">立即免費估價</a>
+      <a href="https://line.me/ti/p/pdWGwHErCs" target="_blank" class="btn-lg btn-out">加 LINE 聊聊</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="reveal">
+    <div class="eyebrow">聯絡我們</div>
+    <h2 class="contact-title">開始合作</h2>
+    <p class="contact-desc">歡迎全台各地木工師傅、室內設計師及工程團隊洽詢，線上即時報價，快速安排製程。</p>
+    <div>
+      <div class="c-row"><span class="c-label">聯絡人</span><span class="c-val">謝仁韋</span></div>
+      <div class="c-row"><span class="c-label">品牌</span><span class="c-val">裝潢秀 × 新繹數位木作</span></div>
+      <div class="c-row"><span class="c-label">手機</span><span class="c-val"><a href="tel:0911588753">0911-588-753</a></span></div>
+      <div class="c-row"><span class="c-label">LINE 電話搜尋</span><span class="c-val"><a href="https://line.me/ti/p/pdWGwHErCs" target="_blank">0911588753</a></span></div>
+      <div class="c-row"><span class="c-label">電話</span><span class="c-val"><a href="tel:02-8970-4662">02-8970-4662</a></span></div>
+      <div class="c-row"><span class="c-label">廠址</span><span class="c-val"><a href="https://maps.app.goo.gl/MayNotu9YFRCVfxk8" target="_blank">新北市土城區永豐路195巷29-1號</a></span></div>
+    </div>
+  </div>
+  <div class="reveal" style="transition-delay:0.15s">
+    <div class="form-wrap">
+      <form id="woodworkingForm" style="width:100%;display:flex;flex-direction:column;gap:14px;">
+        <div class="form-row">
+          <input class="field" type="text" name="name" placeholder="您的姓名 *" required>
+          <input class="field" type="tel" name="phone" placeholder="聯絡電話 *" required>
+        </div>
+        <input class="field" type="email" name="email" placeholder="電子郵件">
+        <input class="field" type="text" name="line_id" placeholder="LINE ID（方便聯繫）">
+        <textarea class="field" name="requirement" placeholder="描述您的需求（材料、尺寸、造型等）" required></textarea>
+        <button type="submit" id="submitBtn" class="form-submit">送出諮詢</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div id="successModal" class="modal-overlay">
+  <div class="modal-box">
+    <svg class="modal-icon" viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+      <polyline points="22 4 12 14.01 9 11.01"/>
+    </svg>
+    <div class="modal-title">資料送出成功！</div>
+    <div class="modal-msg">感謝您的洽詢，我們已收到您的木作需求。專員將會盡快與您聯絡，您也可以點擊上方「加 LINE 聊聊」加速討論！</div>
+    <button type="button" id="modalCloseBtn" class="modal-btn">確認</button>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand">新繹數位木作 × 裝潢秀</div>
+  <div class="footer-links">
+    <a href="#services">服務項目</a><a href="#gallery">作品案例</a><a href="#flow">合作流程</a><a href="#contact">聯絡我們</a>
+  </div>
+  <div class="footer-copy">© 2026 謝仁韋 × 裝潢秀數位造型最佳幫手</div>
+</footer>
+
+<script>
+(function () {
+  const imgs = [
+    'Q7kZ4HVk/S-28549157-0','d0w0L9yJ/S-28549158-0','G452j07d/S-28549159-0','nNfYYWRh/S-28549160-0',
+    'zVWkCsP6/S-28549161-0','NgJWyFdr/S-28549162-0','qMTNsZWX/S-28549163-0','cSGtmXqY/S-28549164-0',
+    'prhKXRf5/S-28549165-0','GwSHbdt/S-28549166-0','nMYFPr7Y/S-28549168-0','xSX8RRG1/S-28549169-0',
+    'NdzZNcLc/S-28549170-0','wFJsHqhT/S-28549171-0','DffYT89N/S-28549172-0','dJ63SQ6D/S-28549173-0'
+  ];
+  document.getElementById('galleryGrid').innerHTML = imgs.map((p, i) =>
+    `<div class="gi"><img src="https://i.ibb.co/${p}.jpg" alt="木作案例 ${i + 1}" loading="lazy"><div class="gi-ov"></div></div>`
+  ).join('');
+
+  const obs = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }),
+    { threshold: 0.08 }
+  );
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+})();
+
+const form = document.getElementById('woodworkingForm');
+const submitBtn = document.getElementById('submitBtn');
+const modal = document.getElementById('successModal');
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxSDRZk2R2j7p8VMSbk2MlSwCnpVvqXH15RQYObjbuCZjtgk_DHAy_awRrj3muN8PfF/exec';
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  submitBtn.disabled = true;
+  submitBtn.innerText = '傳送中...';
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then(() => {
+      submitBtn.disabled = false;
+      submitBtn.innerText = '送出諮詢';
+      modal.classList.add('active');
+      form.reset();
+    })
+    .catch(error => {
+      console.error('Error!', error.message);
+      alert('傳送失敗，請稍後再試，或直接加 LINE 聯繫我們，謝謝！');
+      submitBtn.disabled = false;
+      submitBtn.innerText = '送出諮詢';
+    });
+});
+
+document.getElementById('modalCloseBtn').addEventListener('click', () => modal.classList.remove('active'));
+modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('active'); });
+</script>
+</body>
+</html>
