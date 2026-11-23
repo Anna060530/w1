@@ -287,7 +287,24 @@ footer { padding:48px 80px; background:#060302; border-top:1px solid rgba(201,14
     </div>
     <a href="https://drive.google.com/drive/folders/1AJZHjZQTYRXQD5nKeLKPcEDHFdTSfn3w" class="btn-ghost" target="_blank">更多案例請按此 →</a>
   </div>
-  <div class="gallery-grid" id="galleryGrid"></div>
+  <div class="gallery-grid">
+    <div class="gi"><img src="https://i.ibb.co/Q7kZ4HVk/S-28549157-0.jpg" alt="木作案例 1" loading="lazy"><div class="gi-ov"></div></div>
+    <div class="gi"><img src="https://i.ibb.co/d0w0L9yJ/S-28549158-0.jpg" alt="木作案例 2" loading="lazy"><div class="gi-ov"></div></div>
+    <div class="gi"><img src="https://i.ibb.co/G452j07d/S-28549159-0.jpg" alt="木作案例 3" loading="lazy"><div class="gi-ov"></div></div>
+    <div class="gi"><img src="https://i.ibb.co/nNfYYWRh/S-28549160-0.jpg" alt="木作案例 4" loading="lazy"><div class="gi-ov"></div></div>
+    <div class="gi"><img src="https://i.ibb.co/zVWkCsP6/S-28549161-0.jpg" alt="木作案例 5" loading="lazy"><div class="gi-ov"></div></div>
+    <div class="gi"><img src="https://i.ibb.co/NgJWyFdr/S-28549162-0.jpg" alt="木作案例 6" loading="lazy"><div class="gi-ov"></div></div>
+    <div class="gi"><img src="https://i.ibb.co/qMTNsZWX/S-28549163-0.jpg" alt="木作案例 7" loading="lazy"><div class="gi-ov"></div></div>
+    <div class="gi"><img src="https://i.ibb.co/cSGtmXqY/S-28549164-0.jpg" alt="木作案例 8" loading="lazy"><div class="gi-ov"></div></div>
+    <div class="gi"><img src="https://i.ibb.co/prhKXRf5/S-28549165-0.jpg" alt="木作案例 9" loading="lazy"><div class="gi-ov"></div></div>
+    <div class="gi"><img src="https://i.ibb.co/GwSHbdt/S-28549166-0.jpg" alt="木作案例 10" loading="lazy"><div class="gi-ov"></div></div>
+    <div class="gi"><img src="https://i.ibb.co/nMYFPr7Y/S-28549168-0.jpg" alt="木作案例 11" loading="lazy"><div class="gi-ov"></div></div>
+    <div class="gi"><img src="https://i.ibb.co/xSX8RRG1/S-28549169-0.jpg" alt="木作案例 12" loading="lazy"><div class="gi-ov"></div></div>
+    <div class="gi"><img src="https://i.ibb.co/NdzZNcLc/S-28549170-0.jpg" alt="木作案例 13" loading="lazy"><div class="gi-ov"></div></div>
+    <div class="gi"><img src="https://i.ibb.co/wFJsHqhT/S-28549171-0.jpg" alt="木作案例 14" loading="lazy"><div class="gi-ov"></div></div>
+    <div class="gi"><img src="https://i.ibb.co/DffYT89N/S-28549172-0.jpg" alt="木作案例 15" loading="lazy"><div class="gi-ov"></div></div>
+    <div class="gi"><img src="https://i.ibb.co/dJ63SQ6D/S-28549173-0.jpg" alt="木作案例 16" loading="lazy"><div class="gi-ov"></div></div>
+  </div>
 </section>
 
 <section class="flow" id="flow">
@@ -372,16 +389,6 @@ footer { padding:48px 80px; background:#060302; border-top:1px solid rgba(201,14
 
 <script>
 (function () {
-  const imgs = [
-    'Q7kZ4HVk/S-28549157-0','d0w0L9yJ/S-28549158-0','G452j07d/S-28549159-0','nNfYYWRh/S-28549160-0',
-    'zVWkCsP6/S-28549161-0','NgJWyFdr/S-28549162-0','qMTNsZWX/S-28549163-0','cSGtmXqY/S-28549164-0',
-    'prhKXRf5/S-28549165-0','GwSHbdt/S-28549166-0','nMYFPr7Y/S-28549168-0','xSX8RRG1/S-28549169-0',
-    'NdzZNcLc/S-28549170-0','wFJsHqhT/S-28549171-0','DffYT89N/S-28549172-0','dJ63SQ6D/S-28549173-0'
-  ];
-  document.getElementById('galleryGrid').innerHTML = imgs.map((p, i) =>
-    `<div class="gi"><img src="https://i.ibb.co/${p}.jpg" alt="木作案例 ${i + 1}" loading="lazy"><div class="gi-ov"></div></div>`
-  ).join('');
-
   const obs = new IntersectionObserver(
     entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }),
     { threshold: 0.08 }
